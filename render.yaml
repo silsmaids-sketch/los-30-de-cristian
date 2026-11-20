@@ -2,16 +2,10 @@ services:
   - type: web
     name: los-30-de-cristian
     runtime: python
-    plan: starter
+    plan: free
     region: frankfurt
     buildCommand: python -m compileall -q .
     startCommand: python juego.py
     envVars:
-      - key: GAME_DB
-        value: /var/data/cumple-cristian.sqlite3
       - key: COOKIE_SECURE
         value: "1"
-    disk:
-      name: game-data
-      mountPath: /var/data
-      sizeGB: 1
